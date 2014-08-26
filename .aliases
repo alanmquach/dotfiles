@@ -1,3 +1,8 @@
+# npm shortcuts
+alias ni="npm install"
+alias nis="npm install --save"
+alias nisd="npm install --save-dev"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
