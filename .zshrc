@@ -89,35 +89,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-### Bootstrap scratchpad
-
-### OSX
-# homebrew
-# ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-# brew install caskroom/cask/brew-cask
-
-# Java
-# brew update && brew cask install java
-
-# python
-# brew install python
-
-# iterm2
-# brew cask install --appdir="/Applications" iterm2
-
-# oh-my-zsh
-# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# NVM
-# git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
-
-# pip
-# pip install --upgrade pip
-
-# pygments
-# pip install pygments
-
-# sublime symlink
-# ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ~/bin/subl
-

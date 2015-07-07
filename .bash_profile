@@ -35,24 +35,14 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-############################ Everything past this line needs to be cleaned up, "bootstrap" should be moved to .osx
-
 # Directory jumper
 . ~/git/z/z.sh
-
-### Bootstrap scratchpad
-
-# homebrew
-# ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-
-# sublime symlink
-# ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ~/bin/subl
-
-# git for tab completion - git clone https://github.com/git/git.git
-source ~/git/git/contrib/completion/git-completion.bash
 
 # NVM
 if [ -s ~/.nvm/nvm.sh ]; then
 	NVM_DIR=~/.nvm
 	source ~/.nvm/nvm.sh
 fi
+
+# git for tab completion - git clone https://github.com/git/git.git
+source ~/git/git/contrib/completion/git-completion.bash
