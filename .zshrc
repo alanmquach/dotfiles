@@ -61,6 +61,9 @@ for file in ~/.{path,exports,functions,secret,niners}; do
 done
 unset file
 
+# z
+. ~/git/z/z.sh
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
