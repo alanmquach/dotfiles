@@ -9,6 +9,10 @@ function doIt() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
 else
+	echo ""
+	# Using git diff here for better context, we guarantee git because these dotfiles are stored in a git repo anyways :P
+	find . -maxdepth 1 -type f -name ".*" | xargs basename | xargs -I '{}' git diff --no-index --color-words  ~/{} ./{}
+	echo ""
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
