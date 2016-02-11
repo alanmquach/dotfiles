@@ -1,2 +1,2 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:./node_modules/.bin:$PATH"
