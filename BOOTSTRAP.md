@@ -4,7 +4,8 @@
 homebrew
 ```bash
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
+brew install brew-cask
 ```
 Java
 ```bash
