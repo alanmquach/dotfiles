@@ -37,9 +37,11 @@ iTerm2
 brew cask install --appdir="/Applications" iterm2
 ```
 
-Sublime symlink
+Sublime
 ```bash
-ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ~/bin/subl
+brew cask install --appdir="/Applications" Caskroom/versions/sublime-text3
+mkdir ~/bin
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
 ```
 
 oh-my-zsh
