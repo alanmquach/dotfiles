@@ -7,6 +7,21 @@ homebrew
 brew tap caskroom/cask
 brew install brew-cask
 ```
+
+git
+```bash
+brew instsall git
+```
+
+dotfiles
+```bash
+mkdir -p ~/git
+cd ~/git
+git clone https://github.com/alanmquach/dotfiles.git
+cd dotfiles
+./bootstrap.sh
+```
+
 Java
 ```bash
 brew update && brew cask install java
