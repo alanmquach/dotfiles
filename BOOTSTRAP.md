@@ -22,16 +22,6 @@ cd dotfiles
 ./bootstrap.sh
 ```
 
-Java
-```bash
-brew update && brew cask install java
-```
-
-python
-```bash
-brew install python
-```
-
 iTerm2
 ```bash
 brew cask install --appdir="/Applications" iterm2
@@ -44,14 +34,20 @@ mkdir ~/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
 ```
 
-oh-my-zsh
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
 nvm
 ```bash
+cd ~/git
 git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
+```
+
+Java
+```bash
+brew update && brew cask install java
+```
+
+python
+```bash
+brew install python
 ```
 
 pip
@@ -62,4 +58,9 @@ pip install --upgrade pip
 Pygments
 ```bash
 pip install pygments
+```
+
+oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
