@@ -20,6 +20,7 @@ brew install python
 iTerm2
 ```bash
 brew cask install --appdir="/Applications" iterm2
+```
 
 Sublime symlink
 ```bash
