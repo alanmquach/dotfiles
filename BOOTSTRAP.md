@@ -89,5 +89,4 @@ git clone https://github.com/spf13/spf13-vim.git $HOME/git/spf13-vim
 cd $HOME/git/spf13-vim && git checkout "3.0" && $HOME/git/spf13-vim/bootstrap.sh
 vim +BundleInstall +qall
 NVM_DIR=$HOME/.nvm && . $HOME/.nvm/nvm.sh && $HOME/.vim/bundle/YouCompleteMe/install.py --tern-completer
-
 ```
