@@ -1,3 +1,11 @@
+# mosh shortcuts
+alias p="mosh prime -- tmux new -As dev"
+alias b="mosh box -- tmux new -As dev"
+
+# tmux shortcuts
+alias t="tmux new -As dev"
+alias d="tmux detach-client"
+
 # npm shortcuts
 alias ni="npm install"
 alias nis="npm install --save"
@@ -12,10 +20,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
