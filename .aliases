@@ -1,6 +1,5 @@
 # mosh shortcuts
 alias p="mosh prime -- tmux new -As dev"
-alias b="mosh box -- tmux new -As dev"
 
 # tmux shortcuts
 alias t="tmux new -As dev"
