@@ -49,30 +49,7 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-    if [[ $(locale charmap) == "UTF-8" ]]; then
-	PR_SET_CHARSET=""
-	PR_SHIFT_IN=""
-	PR_SHIFT_OUT=""
-	PR_HBAR="─"
-        PR_ULCORNER="┌"
-        PR_LLCORNER="└"
-        PR_LRCORNER="┘"
-        PR_URCORNER="┐"
-    else
-        typeset -A altchar
-        set -A altchar ${(s..)terminfo[acsc]}
-        # Some stuff to help us draw nice lines
-        PR_SET_CHARSET="%{$terminfo[enacs]%}"
-        PR_SHIFT_IN="%{$terminfo[smacs]%}"
-        PR_SHIFT_OUT="%{$terminfo[rmacs]%}"
-        PR_HBAR='$PR_SHIFT_IN${altchar[q]:--}$PR_SHIFT_OUT'
-        PR_ULCORNER='$PR_SHIFT_IN${altchar[l]:--}$PR_SHIFT_OUT'
-        PR_LLCORNER='$PR_SHIFT_IN${altchar[m]:--}$PR_SHIFT_OUT'
-        PR_LRCORNER='$PR_SHIFT_IN${altchar[j]:--}$PR_SHIFT_OUT'
-        PR_URCORNER='$PR_SHIFT_IN${altchar[k]:--}$PR_SHIFT_OUT'
-     fi
-
-COLORIZE_ACCENT="\[\033[0;36m\]"
+COLORIZE_ACCENT="\[\033[0;31m\]"
 COLORIZE_HIGHLIGHT="\[\033[1;37m\]"
 COLORIZE_PASSIVE="\[\033[1;30m\]"
 COLORIZE_ERROR="\[\033[1;31m\]"
@@ -82,36 +59,17 @@ function __prompt_command() {
 	local EXIT="$?"             # This needs to be first
     PS1=""
 
-    PS1+="${COLORIZE_ACCENT}${PR_ULCORNER}${PR_HBAR}"
-
-
-    # PS1+="${COLORIZE_ACCENT}" # Redundant
+    PS1+="${COLORIZE_ACCENT}"
     PS1+="[ "
 
-    PS1+="${COLORIZE_PASSIVE}\D{%T}"
-
-    PS1+=" "
-
-    PS1+="${COLORIZE_ACCENT}!${COLORIZE_RESET}\!"
+    PS1+="${COLORIZE_PASSIVE}\h${COLORIZE_ACCENT}:${COLORIZE_HIGHLIGHT}\w"
 
     PS1+="${COLORIZE_ACCENT}"
     PS1+=" ]"
 
-    # PS1+="${COLORIZE_ACCENT}" # Redundant
-    PS1+="${PR_HBAR}${PR_HBAR}"
+    PS1+="\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"-( ${COLORIZE_HIGHLIGHT}\$(parse_git_branch) ${COLORIZE_ACCENT})\")${COLORIZE_RESET}"
 
-
-    # PS1+="${COLORIZE_ACCENT}" # Redundant
-    PS1+="[ "
-
-    PS1+="${COLORIZE_HIGHLIGHT}\w"
-
-    PS1+="${COLORIZE_ACCENT}"
-    PS1+=" ]"
-
-    PS1+="\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"${PR_HBAR}${PR_HBAR}( ${COLORIZE_HIGHLIGHT}\$(parse_git_branch) ${COLORIZE_ACCENT})\")${COLORIZE_RESET}\n"
-
-    PS1+="${COLORIZE_ACCENT}${PR_LLCORNER}${PR_HBAR}"
+    PS1+="\n"
 
     PS1+=" "
 
@@ -126,8 +84,6 @@ function __prompt_command() {
 
 }
 
-# export PS1="${COLORIZE_ACCENT}${PR_ULCORNER}${PR_HBAR}[ ${COLORIZE_PASSIVE}\D{%T} ${COLORIZE_ACCENT}!${COLORIZE_RESET}\! ${COLORIZE_ACCENT}]${PR_HBAR}${PR_HBAR}[ ${COLORIZE_HIGHLIGHT}\w${COLORIZE_ACCENT} ]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"${PR_HBAR}${PR_HBAR}( ${COLORIZE_HIGHLIGHT}\$(parse_git_branch) ${COLORIZE_ACCENT})\")${COLORIZE_RESET}\n${COLORIZE_ACCENT}${PR_LLCORNER}${PR_HBAR} ${COLORIZE_HIGHLIGHT}\$${COLORIZE_RESET} "
-export PS2="\[$ORANGE\]→ \[$RESET\]"
 
 
 
