@@ -62,7 +62,11 @@ function __prompt_command() {
     PS1+="${COLORIZE_ACCENT}"
     PS1+="[ "
 
-    PS1+="${COLORIZE_PASSIVE}\h${COLORIZE_ACCENT}:${COLORIZE_HIGHLIGHT}\w"
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        PS1+="${COLORIZE_PASSIVE}\h${COLORIZE_ACCENT}:"
+    fi
+
+    PS1+="${COLORIZE_HIGHLIGHT}\w"
 
     PS1+="${COLORIZE_ACCENT}"
     PS1+=" ]"
@@ -71,7 +75,7 @@ function __prompt_command() {
 
     PS1+="\n"
 
-    PS1+=" "
+    PS1+=""
 
     if [ $EXIT != 0 ]; then
         PS1+="${COLORIZE_ERROR}\$${COLORIZE_RESET}" # Add red if exit code non 0
