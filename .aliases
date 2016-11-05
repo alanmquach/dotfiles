@@ -1,9 +1,13 @@
 # mosh shortcuts
 alias p="mosh prime -- tmux new -As dev"
 
+# exit
+alias x="exit"
+
 # tmux shortcuts
-alias t="tmux new -As dev"
+alias tm="tmux new -As dev"
 alias d="tmux detach-client"
+alias t="tm; x"
 
 # npm shortcuts
 alias ni="npm install"
