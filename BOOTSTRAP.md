@@ -12,10 +12,7 @@ brew install git
 
 # dotfiles
 mkdir -p ~/git
-cd ~/git
-git clone https://github.com/alanmquach/dotfiles.git
-cd dotfiles
-./bootstrap.sh
+git clone https://github.com/alanmquach/dotfiles.git ~/git/dotfiles && ~/git/dotfiles/bootstrap.sh
 
 # iTerm2
 brew cask install --appdir="/Applications" iterm2
