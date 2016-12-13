@@ -1,68 +1,42 @@
 # Bootstrap scratchpad
 
 ## OSX
-homebrew
 ```bash
+# homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 brew install brew-cask
-```
 
-git
-```bash
-brew instsall git
-```
+#git 
+brew install git
 
-dotfiles
-```bash
+# dotfiles
 mkdir -p ~/git
 cd ~/git
 git clone https://github.com/alanmquach/dotfiles.git
 cd dotfiles
 ./bootstrap.sh
-```
 
-iTerm2
-```bash
+# iTerm2
 brew cask install --appdir="/Applications" iterm2
-```
 
-Sublime
-```bash
+# Sublime
 brew cask install --appdir="/Applications" Caskroom/versions/sublime-text3
 mkdir ~/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
-```
 
-nvm
-```bash
-cd ~/git
+# nvm
 git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
-```
 
-Java
-```bash
+# Java
 brew update && brew cask install java
-```
 
-python
-```bash
+# python
 brew install python
-```
-
-pip
-```bash
 pip install --upgrade pip
-```
 
-Pygments
-```bash
+# Pygments
 pip install pygments
-```
-
-oh-my-zsh
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ## Linux
