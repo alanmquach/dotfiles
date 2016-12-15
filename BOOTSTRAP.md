@@ -14,14 +14,6 @@ brew install git
 mkdir -p ~/git
 git clone https://github.com/alanmquach/dotfiles.git ~/git/dotfiles && ~/git/dotfiles/bootstrap.sh
 
-# iTerm2
-brew cask install --appdir="/Applications" iterm2
-
-# Sublime
-brew cask install --appdir="/Applications" Caskroom/versions/sublime-text3
-mkdir ~/bin
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
-
 # nvm
 git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 
@@ -34,6 +26,20 @@ pip install --upgrade pip
 
 # Pygments
 pip install pygments
+
+# iTerm2
+brew cask install --appdir="/Applications" iterm2
+
+# Sublime
+brew cask install --appdir="/Applications" sublime-text
+mkdir ~/bin
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
+
+# Alfred
+brew cask install --appdir="/Applications" alfred
+
+# ag
+brew install the_silver_searcher
 ```
 
 ## Linux
