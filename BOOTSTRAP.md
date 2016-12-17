@@ -43,6 +43,9 @@ brew cask install --appdir="/Applications" alfred
 
 # ag
 brew install the_silver_searcher
+
+# mosh
+brew install mobile-shell
 ```
 
 ## Linux
