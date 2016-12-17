@@ -35,6 +35,9 @@ brew cask install --appdir="/Applications" sublime-text
 mkdir ~/bin
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
 
+# docker
+brew install docker docker-machine
+
 # Alfred
 brew cask install --appdir="/Applications" alfred
 
